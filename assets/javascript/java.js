@@ -5,7 +5,7 @@ var queryTerm = "";
 /* ---------- Functions ---------- */
 function displayAnimals() {
 
-    var queryURL = "https://www.giphy.com/?t=" + animal + "&apikey=p6ZQy2Z694sls6dGCsQcONAUIiXv8IKA";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=p6ZQy2Z694sls6dGCsQcONAUIiXv8IKA&q=" + animals;
 
     $.ajax({
         url: queryURL,
