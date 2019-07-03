@@ -18,17 +18,20 @@ function createBtns() {
 function displayAnimals() {
 
     var animal = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=p6ZQy2Z694sls6dGCsQcONAUIiXv8IKA&tag=" + animal;
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=p6ZQy2Z694sls6dGCsQcONAUIiXv8IKA&limit=10&q=" + animal;
 
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response) {
-        var gif = response.data.image_original_url;
-        var animalGif = $("<img>");
-        animalGif.attr("src", gif);
-        animalGif.attr("alt", "animal image");
-        $('#gif-section').prepend(animalGif);
+
+        for (var i = 0; i < animals.length; i++) {
+            var gif = response.data[i].images.original.url;
+            var animalGif = $("<img>");
+            animalGif.attr("src", gif);
+            animalGif.attr("alt", "animal image");
+            $('#gif-section').prepend(animalGif);
+        };
     });
 };
 
