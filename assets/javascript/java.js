@@ -1,18 +1,24 @@
 /* ---------- Variables ---------- */
 var animals = ['horse', 'dog', 'cat', 'wolf', 'giraffe', 'whale', 'tiger', 'elephant', 'rabbit', 'monkey'];
-var animal = "";
 
 /* ---------- Functions ---------- */
 function createBtns() {
+
+    $("#animal-buttons").empty();
+
     for (var i = 0; i < animals.length; i++) {
-        document.getElementById("animal-buttons").innerHTML += "<button class='animalStyle'>" + animals[i] + "</button>";
+      var a = $("<button>");
+      a.addClass("animalBtn");
+      a.attr("data-name", animals[i]);
+      a.text(animals[i]);
+      $("#animal-buttons").append(a);
     };
-};
+  };
 
 function displayAnimals() {
 
-    //var animal = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=p6ZQy2Z694sls6dGCsQcONAUIiXv8IKA&tag=horse";
+    var animal = $(this).attr("data-name");
+    var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=p6ZQy2Z694sls6dGCsQcONAUIiXv8IKA&tag=" + animal;
 
     $.ajax({
         url: queryURL,
@@ -31,13 +37,12 @@ $(document).ready(function() {
 
     createBtns();
 
-    $('#animal-buttons').on('click', function() {
-        displayAnimals();
-    });
 
-    $('#add-animal').on('click', function() {
+    /* $('#add-animal').on('click', function() {
         queryTerm = $('#animal-input').val().trim();
-    });
+    }); */
+
+    $(document).on("click", ".animalBtn", displayAnimals);
 
 
 
