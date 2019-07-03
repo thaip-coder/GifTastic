@@ -9,3 +9,7 @@
 #add-animal {
     border: solid 1px black;
 }
+
+.animalStyle {
+    margin: 4px;
+}
