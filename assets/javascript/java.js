@@ -25,11 +25,15 @@ function displayAnimals() {
         method: "GET"
     }).then(function(response) {
 
-        for (var i = 0; i < animals.length; i++) {
-            var gif = response.data[i].images.original.url;
+        for (var i = 0; i < 10; i++) {
+            var gifUrl = response.data[i].images.fixed_width_still.url;
             var animalGif = $("<img>");
-            animalGif.attr("src", gif);
+            animalGif.attr("src", gifUrl);
+            animalGif.attr("data-still", gifUrl);
+            animalGif.attr("data-animate", response.data[i].images.fixed_width.url);
+            animalGif.attr("data-state", "still");
             animalGif.attr("alt", "animal image");
+            animalGif.attr("class", "gif");
             $('#gif-section').prepend(animalGif);
         };
     });
@@ -39,8 +43,17 @@ function displayAnimals() {
 $(document).ready(function() {
 
     createBtns();
-
-
+   
+    $('.gif').on('click', function() {
+        if (animalGif === "still") {
+            $(animalGif).attr("src", $(animalGif).attr("data-animate"));
+            $(animalGif).attr("data-state", "animate");
+      } else {
+            $(animalGif).attr("src", $(animalGif).attr("data-still"));
+            $(animalGif).attr("data-state", "still");
+        };
+    });
+    
     /* $('#add-animal').on('click', function() {
         queryTerm = $('#animal-input').val().trim();
     }); */
