@@ -60,6 +60,7 @@ $(document).ready(function() {
     /* $('#add-animal').on('click', function() {
         queryTerm = $('#animal-input').val().trim();
     }); */
+    
     $(document).on("click", ".gif", gifState);
     $(document).on("click", ".animalBtn", displayAnimals);
 
