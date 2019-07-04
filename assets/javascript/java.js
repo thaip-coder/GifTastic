@@ -18,7 +18,7 @@ function createBtns() {
 function displayAnimals() {
 
     var animal = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=p6ZQy2Z694sls6dGCsQcONAUIiXv8IKA&limit=10&q=" + animal;
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=p6ZQy2Z694sls6dGCsQcONAUIiXv8IKA&rating=pg-13&limit=10&q=" + animal;
 
     $.ajax({
         url: queryURL,
