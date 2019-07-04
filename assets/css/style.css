@@ -11,7 +11,7 @@ body, html {
 
 #animal-form {
     position: sticky;
-    top: 0;
+    top: 20px;
     border: inset 2px indigo;
     padding: 10px;
     width: 320px;
