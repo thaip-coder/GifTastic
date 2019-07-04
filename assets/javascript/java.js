@@ -65,11 +65,12 @@ $(document).ready(function() {
     //Runs creates button function
     createBtns();
    
-    //Adds new animal to array
+    //Adds new animal to array and creates button for new animal
     $('#add-animal').on('click', function() {
         event.preventDefault();
             queryTerm = $('#animal-input').val().trim();
             var string = queryTerm.toLowerCase();
+            //Ensures duplicate animal button cannot be created
             var i = animals.indexOf(string);
                 if (i > -1) {
                     alert('Sorry, this animal button already exists!');
@@ -79,7 +80,7 @@ $(document).ready(function() {
             };
     });
 
-    //Clears search box
+    //Clears search box on click of search field
     $('#animal-input').on('click', function() {
         $('#animal-input').attr('onfocus', "this.value=''")
     });

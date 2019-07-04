@@ -1,12 +1,24 @@
+body, html {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#text {
+    color: white;
+}
+
 #animal-buttons {
     border: solid 1px black;
+    margin-bottom: 20px;
 }
 
 #gif-section {
     border: solid 1px black;
 }
 
-#add-animal {
+#adding-animals {
     border: solid 1px black;
 }
 
@@ -14,8 +26,17 @@
     margin: 4px;
 }
 
+.animalBtn:hover {
+    color: purple;
+    background-color: lightpink;
+}
+
+.gif {
+    margin: auto;
+}
+
 .rate-styling {
     padding-bottom: 10px;
     width: 200px;
-    margin: 0;
+    color: white;
 }
