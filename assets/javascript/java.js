@@ -46,11 +46,11 @@ $(document).ready(function() {
    
     $('.gif').on('click', function() {
         if (animalGif === "still") {
-            $(animalGif).attr("src", $(animalGif).attr("data-animate"));
-            $(animalGif).attr("data-state", "animate");
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
       } else {
-            $(animalGif).attr("src", $(animalGif).attr("data-still"));
-            $(animalGif).attr("data-state", "still");
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
         };
     });
     
