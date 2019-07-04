@@ -14,6 +14,7 @@ body, html {
     top: 0;
     border: inset 2px indigo;
     padding: 10px;
+    width: 320px;
 }
 
 #add-animal {
@@ -26,6 +27,7 @@ body, html {
 }
 
 #animal-buttons {
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
