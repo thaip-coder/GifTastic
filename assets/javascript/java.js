@@ -29,7 +29,7 @@ function displayAnimals() {
             var gifUrl = response.data[i].images.fixed_width_still.url;
             var animalGif = $("<img>");
             animalGif.attr("src", gifUrl);
-            animalGif.attr("data-still", gifUrl);
+            animalGif.attr("data-still", response.data[i].images.fixed_width_still.url);
             animalGif.attr("data-animate", response.data[i].images.fixed_width.url);
             animalGif.attr("data-state", "still");
             animalGif.attr("alt", "animal image");
@@ -39,25 +39,28 @@ function displayAnimals() {
     });
 };
 
+function gifState () {
+    var state = $(this).attr('data-state');
+    console.log(state);
+  
+    if (state === 'still') {
+      $(this).attr('src', $(this).attr("data-animate"));
+      $(this).attr('data-state', 'animated');
+    } else {
+      $(this).attr('src', $(this).attr("data-still"));
+      $(this).attr('data-state', 'still')
+    };
+};
+
 /* ---------- Process ---------- */
 $(document).ready(function() {
 
     createBtns();
    
-    $('.gif').on('click', function() {
-        if (animalGif === "still") {
-            $(this).attr("src", $(this).attr("data-animate"));
-            $(this).attr("data-state", "animate");
-      } else {
-            $(this).attr("src", $(this).attr("data-still"));
-            $(this).attr("data-state", "still");
-        };
-    });
-    
     /* $('#add-animal').on('click', function() {
         queryTerm = $('#animal-input').val().trim();
     }); */
-
+    $(document).on("click", ".gif", gifState);
     $(document).on("click", ".animalBtn", displayAnimals);
 
 
