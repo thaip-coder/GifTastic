@@ -3,7 +3,7 @@ var animals = ['horse', 'dog', 'cat', 'wolf', 'giraffe', 'whale', 'tiger', 'elep
 queryTerm = "";
 
 /* ---------- Functions ---------- */
-//Creates buttons for each animal in the array
+//Creates buttons for each animal in the array function
 function createBtns() {
     $("#animal-buttons").empty();
 
@@ -45,7 +45,7 @@ function displayAnimals() {
     });
 };
 
-//Plays and pauses GIFs on click
+//Plays and pauses GIFs function
 function gifState () {
     var state = $(this).attr('data-state');
     console.log(state);
@@ -62,10 +62,10 @@ function gifState () {
 /* ---------- Process ---------- */
 $(document).ready(function() {
 
-    //Runs creates button function
+    //Creates initial buttons from animals array
     createBtns();
    
-    //Adds new animal to array and creates button for new animal
+    //Click event for Add Animal button
     $('#add-animal').on('click', function() {
         event.preventDefault();
             queryTerm = $('#animal-input').val().trim();
@@ -75,8 +75,10 @@ $(document).ready(function() {
                 if (i > -1) {
                     alert('Sorry, this animal button already exists!');
             } else {
+                //Creates new animal button
                 animals.push(string);
                 createBtns();
+                //Scrolls you back to buttons section
                 $('html, body').animate({
                     scrollTop: $("#animal-buttons").offset().top
                 }, 500);
