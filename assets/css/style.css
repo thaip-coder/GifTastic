@@ -53,6 +53,10 @@ body, html {
     opacity: 0.9;
 }
 
+.gif:hover {
+    opacity: 1.0;
+}
+
 .rate-styling {
     padding-bottom: 10px;
     width: 200px;
