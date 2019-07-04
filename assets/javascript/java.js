@@ -77,6 +77,9 @@ $(document).ready(function() {
             } else {
                 animals.push(string);
                 createBtns();
+                $('html, body').animate({
+                    scrollTop: $("#animal-buttons").offset().top
+                }, 500);
             };
     });
 

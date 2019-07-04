@@ -9,21 +9,33 @@ body, html {
     color: white;
 }
 
+#animal-form {
+    position: sticky;
+    top: 0;
+    border: inset 2px indigo;
+    padding: 10px;
+}
+
+#add-animal {
+    opacity: 0.7;
+}
+
+#add-animal:hover {
+    color: purple;
+    background-color: lightpink;
+}
+
 #animal-buttons {
-    border: solid 1px black;
     margin-bottom: 20px;
 }
 
-#gif-section {
-    border: solid 1px black;
-}
-
 #adding-animals {
-    border: solid 1px black;
+    margin-top: 40px;
 }
 
 .animalBtn {
     margin: 4px;
+    opacity: 0.7;
 }
 
 .animalBtn:hover {
@@ -39,4 +51,5 @@ body, html {
     padding-bottom: 10px;
     width: 200px;
     color: white;
+    text-emphasis: bold;
 }
